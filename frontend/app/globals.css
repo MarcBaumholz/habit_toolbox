@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: 247 247 248;
+  --card: 255 255 255;
+  --text: 20 20 20;
+  --muted: 113 113 122;
+  --primary: 79 70 229; /* indigo-600 */
+}
+
+body{ @apply text-[color:rgb(var(--text))] bg-[rgb(var(--bg))]; font-feature-settings:'ss01' 'cv11'; }
+
+.surface{ @apply bg-[rgb(var(--card))] border border-neutral-200/70 rounded-xl shadow-sm; }
+.cta{ @apply bg-[rgb(var(--primary))] text-white hover:brightness-105 active:brightness-95; }
+.muted{ @apply text-[color:rgb(var(--muted))]; }

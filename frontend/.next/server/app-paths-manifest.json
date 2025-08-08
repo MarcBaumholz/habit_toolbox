@@ -1,0 +1,10 @@
+{
+  "/tools/page": "app/tools/page.js",
+  "/groups/page": "app/groups/page.js",
+  "/learnings/page": "app/learnings/page.js",
+  "/summary/page": "app/summary/page.js",
+  "/auth/page": "app/auth/page.js",
+  "/habits/page": "app/habits/page.js",
+  "/page": "app/page.js",
+  "/profile/page": "app/profile/page.js"
+}
