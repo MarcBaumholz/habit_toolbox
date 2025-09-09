@@ -26,6 +26,7 @@ pnpm-debug.log*
 
 # Node / Next.js
 node_modules/
+**/node_modules/
 .next/
 .dist/
 dist/
@@ -42,7 +43,9 @@ __pycache__/
 *.pyd
 *.sqlite3
 .venv/
+**/.venv/
 venv/
+**/venv/
 .poetry/
 .mypy_cache/
 .pytest_cache/
