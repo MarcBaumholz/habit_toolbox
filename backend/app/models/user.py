@@ -11,5 +11,7 @@ class User(SQLModel, table=True):
     password_hash: str
     display_name: Optional[str] = None
     photo_url: Optional[str] = None
+    description: Optional[str] = None
+    big_why: Optional[str] = None
     lifebook: Optional[Dict] = Field(default=None, sa_column=Column(JSON))
     created_at: datetime = Field(default_factory=datetime.utcnow)

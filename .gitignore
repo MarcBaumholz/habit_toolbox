@@ -50,6 +50,8 @@ coverage.xml
 htmlcov/
 
 # Databases / uploads
+*.db
+habit.db
 backend/habit.db
 uploads/
 /data/

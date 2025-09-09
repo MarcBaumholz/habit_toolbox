@@ -4,8 +4,13 @@ export function uuid() {
 
 export async function ensureToken(apiBase: string): Promise<string> {
   const storageKey = 'habitlink_token'
+  const disableKey = 'habitlink_disable_auto_login'
   const existing = typeof window !== 'undefined' ? localStorage.getItem(storageKey) : null
   if (existing) return existing
+
+  // Respect explicit logout in dev by skipping auto-login when disabled
+  const disabled = typeof window !== 'undefined' ? localStorage.getItem(disableKey) : null
+  if (disabled) return ''
 
   const email = `dev_${uuid()}@example.com`
   const password = 'dev-password-123'
@@ -28,6 +33,8 @@ export async function ensureToken(apiBase: string): Promise<string> {
   const data = await res.json()
   const token = data.access_token as string
   localStorage.setItem(storageKey, token)
+  // clear the disable flag if present
+  try { localStorage.removeItem(disableKey) } catch {}
   return token
 }
 

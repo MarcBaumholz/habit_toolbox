@@ -23,6 +23,7 @@ export default function CreateHabitWizard({ onDone }: { onDone?: (habitId: numbe
     implementation_intentions: '',
     hurdles: '',
     reminder_type: '',
+    is_public: true,
   })
 
   function next() { setStep(s => Math.min(5, s + 1)) }
@@ -37,6 +38,7 @@ export default function CreateHabitWizard({ onDone }: { onDone?: (habitId: numbe
         identity_goal: form.identity_goal,
         minimal_dose: form.minimal_dose,
         implementation_intentions: form.implementation_intentions,
+        is_public: form.is_public,
         loop: {
           icon: form.icon,
           keystone: form.keystone,
@@ -83,6 +85,9 @@ export default function CreateHabitWizard({ onDone }: { onDone?: (habitId: numbe
             </div>
             <div className="border rounded-xl p-4 bg-neutral-50">
               <label className="flex items-center gap-2"><input type="checkbox" checked={form.keystone} onChange={e=>setForm(f=>({...f, keystone:e.target.checked}))} /><span>This is a Keystone Habit</span></label>
+            </div>
+            <div className="border rounded-xl p-4 bg-neutral-50">
+              <label className="flex items-center gap-2"><input type="checkbox" checked={form.is_public} onChange={e=>setForm(f=>({...f, is_public:e.target.checked}))} /><span>Make habit public (discoverable)</span></label>
             </div>
           </div>
           <div className="flex justify-end"><Button onClick={next} disabled={!form.title.trim()} className="px-5 py-2 rounded-xl">Next →</Button></div>

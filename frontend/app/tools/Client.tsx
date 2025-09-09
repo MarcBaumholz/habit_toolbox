@@ -4,8 +4,44 @@ import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Dialog } from '@/components/ui/Dialog'
 import { api } from '@/app/api'
+import { useRouter } from 'next/navigation'
+
+function LinkToHabit({ toolId, onLinked }:{ toolId:number; onLinked: ()=>void }){
+  const router = useRouter()
+  const [habits,setHabits] = useState<any[]>([])
+  const [habitId,setHabitId] = useState<number|''>('' as any)
+  const [busy,setBusy] = useState(false)
+
+  useEffect(()=>{ (async()=>{ try{ setHabits(await api('/habits')) }catch{} })() },[])
+
+  async function link(){
+    if(!habitId || busy) return
+    setBusy(true)
+    try{
+      await api(`/habits/${habitId}/tools`, { method:'POST', body: JSON.stringify({ tool_id: toolId }) })
+      onLinked()
+      // Navigate directly to the habit to see the linked tool
+      router.push(`/habits/${habitId}`)
+    } finally { setBusy(false) }
+  }
+
+  return (
+    <div className="rounded-2xl border p-3 bg-neutral-50">
+      <div className="font-semibold mb-2">Link to one of my habits</div>
+      <div className="flex items-center gap-2">
+        <select className="input" value={habitId} onChange={e=>setHabitId(Number(e.target.value))}>
+          <option value="">Select habit…</option>
+          {habits.map(h=> <option key={h.id} value={h.id}>{h.title}</option>)}
+        </select>
+        <Button disabled={!habitId || busy} onClick={link}>Link</Button>
+        {habitId? <Button variant="secondary" onClick={()=>router.push(`/habits/${habitId}`)}>Open Habit</Button>:null}
+      </div>
+    </div>
+  )
+}
 
 export default function ToolsClient() {
+  const router = useRouter()
   const [tools, setTools] = useState<any[] | null>(null)
   const [query, setQuery] = useState('')
   const [adding, setAdding] = useState(false)
@@ -59,7 +95,7 @@ export default function ToolsClient() {
       )}
 
       {adding && (
-        <Dialog title="Create a New Tool" trigger={<span/>}>
+        <Dialog title="Create a New Tool" trigger={<span/>} open={adding} onOpenChange={setAdding}>
           <form className="space-y-3" onSubmit={async e=>{
             e.preventDefault()
             if (!form.title.trim() || !form.description.trim()) return
@@ -100,24 +136,19 @@ export default function ToolsClient() {
       )}
 
       {detail && (
-        <Dialog title={detail.title} trigger={<span/>}>
-          <div className="space-y-2">
+        <Dialog title={detail.title} trigger={<span/>} open={!!detail} onOpenChange={(v)=>{ if(!v) setDetail(null) }}>
+          <div className="space-y-3">
             <div className="text-neutral-700">{detail.description}</div>
             <div className="flex gap-2 flex-wrap">
               {(detail.keywords||[]).map((k:string)=>(<span key={k} className="rounded-full border px-2 py-0.5 text-xs">{k}</span>))}
             </div>
-            {detail.created_by_user_id && (
-              <div className="text-sm text-neutral-500 flex items-center gap-2 pt-1">
-                <span>👤</span>
-                <span>Created by User {detail.created_by_user_id}</span>
-              </div>
-            )}
-            <div className="pt-2">
-              <div className="font-semibold">How to Use It:</div>
+            <div className="pt-1">
+              <div className="font-semibold mb-1">How to Use It</div>
               <ul className="list-disc pl-5">
                 {(detail.steps||[]).map((s:string, idx:number)=>(<li key={idx}>{s}</li>))}
               </ul>
             </div>
+            <LinkToHabit toolId={detail.id} onLinked={async()=>{ try{ const next=await api('/tools'); setTools(next) }catch{}; /* After linking, auto-open the chosen habit page from inside LinkToHabit via its "Open Habit" button. */ }} />
           </div>
         </Dialog>
       )}

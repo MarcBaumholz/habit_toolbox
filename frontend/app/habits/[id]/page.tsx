@@ -1,6 +1,4 @@
-import dynamic from 'next/dynamic'
-
-const Client = dynamic(() => import('./Client'), { ssr: false })
+import Client from './Client'
 
 type Props = { params: Promise<{ id: string }> }
 export default async function HabitDetail({ params }: Props) {

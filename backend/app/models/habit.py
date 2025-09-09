@@ -15,6 +15,7 @@ class Habit(SQLModel, table=True):
     minimal_dose: Optional[str] = None
     implementation_intentions: Optional[str] = None
     reminders: Optional[Dict] = Field(default=None, sa_column=Column(JSON))
+    is_public: bool = True
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
 
@@ -24,3 +25,17 @@ class HabitLog(SQLModel, table=True):
     day: date = Field(index=True)
     completed: bool = False
     created_at: datetime = Field(default_factory=datetime.utcnow)
+
+
+class HabitSubscription(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    user_id: int = Field(index=True)
+    habit_id: int = Field(index=True)
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+
+
+class HabitToolLink(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    habit_id: int = Field(index=True)
+    tool_id: int = Field(index=True)
+    added_at: datetime = Field(default_factory=datetime.utcnow)

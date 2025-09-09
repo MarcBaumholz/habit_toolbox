@@ -12,11 +12,14 @@ export async function api(path: string, opts: RequestInit = {}) {
   if (res.status === 401 && typeof window !== 'undefined') {
     // clear and retry once
     try { localStorage.removeItem('habitlink_token') } catch {}
-    token = await ensureToken(API_BASE)
-    res = await fetch(`${API_BASE}${path}`, {
-      ...opts,
-      headers: { 'Content-Type': 'application/json', Authorization: token ? `Bearer ${token}` : '', ...(opts.headers || {}) },
-    })
+    // If user explicitly logged out, respect it
+    if (!localStorage.getItem('habitlink_disable_auto_login')) {
+      token = await ensureToken(API_BASE)
+      res = await fetch(`${API_BASE}${path}`, {
+        ...opts,
+        headers: { 'Content-Type': 'application/json', Authorization: token ? `Bearer ${token}` : '', ...(opts.headers || {}) },
+      })
+    }
   }
   if (!res.ok) throw new Error(await res.text())
   return res.json()
