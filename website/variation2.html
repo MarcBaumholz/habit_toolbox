@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Toolbox - Dein Weg zu besseren Gewohnheiten</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="variation2.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span class="brand-text">Habit Toolbox</span>
+            </div>
+            <div class="nav-links">
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#community" class="nav-link">Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🚀</span>
+                    <span>Neue Version verfügbar</span>
+                </div>
+                <h1 class="hero-title">
+                    Transformiere deine Gewohnheiten mit der 
+                    <span class="gradient-text">Habit Toolbox</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Ein systematischer Ansatz für nachhaltige Gewohnheitsbildung. 
+                    Folge dem bewährten Prozess und nutze unsere Tools für maximalen Erfolg.
+                </p>
+                
+                <!-- Problem Input -->
+                <div class="problem-input-container">
+                    <div class="input-header">
+                        <h3 class="input-label">Was ist dein Gewohnheits-Problem?</h3>
+                        <div class="input-subtitle">Beschreibe dein Problem und wir finden die passende Toolbox</div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <input type="text" 
+                                   placeholder="z.B. Ich möchte regelmäßig Sport treiben, aber schaffe es nicht..." 
+                                   class="problem-input"
+                                   id="problemInput">
+                            <div class="input-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <button class="input-button" onclick="findSolution()">
+                            <span>Lösung finden</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-actions">
+                    <a href="#notion-template" class="btn btn-primary">
+                        <span class="btn-icon">📋</span>
+                        <div class="btn-content">
+                            <span class="btn-title">Notion Template</span>
+                            <span class="btn-subtitle">Kostenloser Download</span>
+                        </div>
+                    </a>
+                    <a href="#process" class="btn btn-secondary">
+                        <span class="btn-icon">🚀</span>
+                        <div class="btn-content">
+                            <span class="btn-title">Follow the Process</span>
+                            <span class="btn-subtitle">Schritt-für-Schritt</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Der Habit Toolbox Prozess</h2>
+                <p class="section-subtitle">Ein bewährter 4-Schritte-Prozess für nachhaltige Gewohnheitsbildung</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>1</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Problem identifizieren</h3>
+                        <p>Definiere klar, welche Gewohnheit du ändern möchtest und warum. Verstehe die zugrundeliegenden Ursachen.</p>
+                        <div class="step-tools">
+                            <span class="tool-tag">Problem Canvas</span>
+                            <span class="tool-tag">Why Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>2</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Toolbox wählen</h3>
+                        <p>Wähle die passende Toolbox für dein spezifisches Problem aus. Jede Toolbox ist speziell optimiert.</p>
+                        <div class="step-tools">
+                            <span class="tool-tag">Tool Matching</span>
+                            <span class="tool-tag">Customization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>3</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Systematisch umsetzen</h3>
+                        <p>Folge dem strukturierten Ansatz und tracke deinen Fortschritt. Bleib konsistent und messbar.</p>
+                        <div class="step-tools">
+                            <span class="tool-tag">Progress Tracking</span>
+                            <span class="tool-tag">Habit Stacking</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>4</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Community nutzen</h3>
+                        <p>Schließe dich einer Accountability Group an für zusätzliche Motivation und Unterstützung.</p>
+                        <div class="step-tools">
+                            <span class="tool-tag">Accountability</span>
+                            <span class="tool-tag">Peer Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Verfügbare Toolboxen</h2>
+                <p class="section-subtitle">Wähle die passende Toolbox für dein Gewohnheitsziel</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card featured">
+                    <div class="tool-header">
+                        <div class="tool-icon">🏃‍♂️</div>
+                        <div class="tool-badge">Beliebt</div>
+                    </div>
+                    <h3>Fitness & Bewegung</h3>
+                    <p>Strukturierter Ansatz für regelmäßige körperliche Aktivität und nachhaltige Fitnessgewohnheiten.</p>
+                    <div class="tool-stats">
+                        <div class="stat">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Erfolgsrate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2.3k</span>
+                            <span class="stat-label">Nutzer</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tag">Motivation</span>
+                        <span class="tag">Planung</span>
+                        <span class="tag">Tracking</span>
+                    </div>
+                    <button class="tool-button">
+                        <span>Toolbox öffnen</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🧠</div>
+                    </div>
+                    <h3>Lernen & Produktivität</h3>
+                    <p>Effektive Methoden für kontinuierliches Lernen, Fokus und produktive Arbeitsgewohnheiten.</p>
+                    <div class="tool-stats">
+                        <div class="stat">
+                            <span class="stat-number">89%</span>
+                            <span class="stat-label">Erfolgsrate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1.8k</span>
+                            <span class="stat-label">Nutzer</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tag">Fokus</span>
+                        <span class="tag">Lernen</span>
+                        <span class="tag">Zeitmanagement</span>
+                    </div>
+                    <button class="tool-button">
+                        <span>Toolbox öffnen</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">😴</div>
+                    </div>
+                    <h3>Schlaf & Erholung</h3>
+                    <p>Gesunde Schlafgewohnheiten für bessere Regeneration und optimale Erholung.</p>
+                    <div class="tool-stats">
+                        <div class="stat">
+                            <span class="stat-number">92%</span>
+                            <span class="stat-label">Erfolgsrate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1.5k</span>
+                            <span class="stat-label">Nutzer</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tag">Schlaf</span>
+                        <span class="tag">Routine</span>
+                        <span class="tag">Erholung</span>
+                    </div>
+                    <button class="tool-button">
+                        <span>Toolbox öffnen</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🍎</div>
+                    </div>
+                    <h3>Ernährung & Gesundheit</h3>
+                    <p>Nachhaltige Ernährungsgewohnheiten entwickeln für langfristige Gesundheit.</p>
+                    <div class="tool-stats">
+                        <div class="stat">
+                            <span class="stat-number">87%</span>
+                            <span class="stat-label">Erfolgsrate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2.1k</span>
+                            <span class="stat-label">Nutzer</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tag">Ernährung</span>
+                        <span class="tag">Gesundheit</span>
+                        <span class="tag">Planung</span>
+                    </div>
+                    <button class="tool-button">
+                        <span>Toolbox öffnen</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">💼</div>
+                    </div>
+                    <h3>Arbeit & Karriere</h3>
+                    <p>Produktive Arbeitsgewohnheiten und strategische Karriereentwicklung.</p>
+                    <div class="tool-stats">
+                        <div class="stat">
+                            <span class="stat-number">91%</span>
+                            <span class="stat-label">Erfolgsrate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1.7k</span>
+                            <span class="stat-label">Nutzer</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tag">Karriere</span>
+                        <span class="tag">Produktivität</span>
+                        <span class="tag">Networking</span>
+                    </div>
+                    <button class="tool-button">
+                        <span>Toolbox öffnen</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🧘‍♀️</div>
+                    </div>
+                    <h3>Mental Health</h3>
+                    <p>Achtsamkeit und mentale Gesundheit für ein ausgewogenes Leben.</p>
+                    <div class="tool-stats">
+                        <div class="stat">
+                            <span class="stat-number">88%</span>
+                            <span class="stat-label">Erfolgsrate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1.3k</span>
+                            <span class="stat-label">Nutzer</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tag">Achtsamkeit</span>
+                        <span class="tag">Stress</span>
+                        <span class="tag">Balance</span>
+                    </div>
+                    <button class="tool-button">
+                        <span>Toolbox öffnen</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notion Template Section -->
+    <section class="notion-template" id="notion-template">
+        <div class="container">
+            <div class="template-content">
+                <div class="template-text">
+                    <div class="template-badge">
+                        <span class="badge-icon">📋</span>
+                        <span>Notion Template</span>
+                    </div>
+                    <h2>Strukturiertes Notion Template</h2>
+                    <p>Lade dir unser strukturiertes Notion Template herunter und starte sofort mit der Umsetzung deiner Gewohnheitsziele. Alle Toolboxen sind bereits vorkonfiguriert.</p>
+                    <div class="template-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✅</div>
+                            <div class="feature-content">
+                                <h4>Vorgefertigte Strukturen</h4>
+                                <p>Für alle Toolboxen bereits eingerichtet</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-content">
+                                <h4>Automatische Tracking-Systeme</h4>
+                                <p>Intelligente Fortschrittsverfolgung</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📈</div>
+                            <div class="feature-content">
+                                <h4>Progress-Visualisierungen</h4>
+                                <p>Schöne Charts und Statistiken</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">👥</div>
+                            <div class="feature-content">
+                                <h4>Community-Integration</h4>
+                                <p>Direkte Anbindung an WhatsApp Groups</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary btn-large">
+                        <span class="btn-icon">📥</span>
+                        <div class="btn-content">
+                            <span class="btn-title">Template herunterladen</span>
+                            <span class="btn-subtitle">Kostenlos • Sofort verfügbar</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="template-preview">
+                    <div class="notion-mockup">
+                        <div class="notion-header">
+                            <div class="notion-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="notion-title">Habit Toolbox - Fitness</div>
+                        </div>
+                        <div class="notion-content">
+                            <div class="notion-sidebar">
+                                <div class="sidebar-item active">
+                                    <span class="sidebar-icon">📊</span>
+                                    <span>Dashboard</span>
+                                </div>
+                                <div class="sidebar-item">
+                                    <span class="sidebar-icon">🎯</span>
+                                    <span>Goals</span>
+                                </div>
+                                <div class="sidebar-item">
+                                    <span class="sidebar-icon">📅</span>
+                                    <span>Calendar</span>
+                                </div>
+                                <div class="sidebar-item">
+                                    <span class="sidebar-icon">📈</span>
+                                    <span>Analytics</span>
+                                </div>
+                            </div>
+                            <div class="notion-main">
+                                <div class="notion-block">
+                                    <h4>Weekly Progress</h4>
+                                    <div class="notion-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%"></div>
+                                        </div>
+                                        <span>75% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="notion-stats">
+                                    <div class="stat-card">
+                                        <span class="stat-value">12</span>
+                                        <span class="stat-label">Days Streak</span>
+                                    </div>
+                                    <div class="stat-card">
+                                        <span class="stat-value">85%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community" id="community">
+        <div class="container">
+            <div class="community-content">
+                <div class="community-text">
+                    <div class="community-badge">
+                        <span class="badge-icon">👥</span>
+                        <span>Community</span>
+                    </div>
+                    <h2>Schließe dich unserer WhatsApp Community an</h2>
+                    <p>Erfolg ist einfacher, wenn du nicht alleine bist. Tausche dich mit anderen aus, teile deine Fortschritte und erhalte Motivation von Gleichgesinnten.</p>
+                    <div class="community-features">
+                        <div class="feature-card">
+                            <div class="feature-icon">👥</div>
+                            <div class="feature-content">
+                                <h4>Accountability Partner</h4>
+                                <p>Finde den perfekten Partner für deine Gewohnheitsziele</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-content">
+                                <h4>Wöchentliche Check-ins</h4>
+                                <p>Regelmäßige Updates und gegenseitige Unterstützung</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <div class="feature-content">
+                                <h4>Gemeinsame Ziele</h4>
+                                <p>Setze und erreiche Ziele zusammen mit der Community</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary btn-large">
+                        <span class="btn-icon">💬</span>
+                        <div class="btn-content">
+                            <span class="btn-title">Community beitreten</span>
+                            <span class="btn-subtitle">WhatsApp • Kostenlos</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name">Habit Toolbox</span>
+                        <span class="brand-tagline">Transformiere deine Gewohnheiten</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Tools</h4>
+                        <a href="#tools">Alle Toolboxen</a>
+                        <a href="#tools">Fitness</a>
+                        <a href="#tools">Produktivität</a>
+                        <a href="#tools">Schlaf</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Community</h4>
+                        <a href="#community">WhatsApp Group</a>
+                        <a href="#community">Accountability</a>
+                        <a href="#community">Support</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <a href="#notion-template">Notion Template</a>
+                        <a href="#process">Process Guide</a>
+                        <a href="https://github.com/yourusername/habit-toolbox">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Habit Toolbox. Made with ❤️ for better habits.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
