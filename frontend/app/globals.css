@@ -11,16 +11,6 @@
   --ring: 208 213 221;           /* subtle ring */
 }
 
-/* Dark mode variables */
-.dark{
-  --bg: 15 23 42;                /* dark slate background */
-  --card: 30 41 59;              /* dark blue cards */
-  --text: 248 250 252;           /* near-white text */
-  --muted: 148 163 184;          /* light slate */
-  --primary: 99 102 241;         /* indigo for dark mode */
-  --ring: 71 85 105;             /* dark ring */
-}
-
 @layer base{
   html{ font-feature-settings:'ss01' 'cv11'; }
   body{ @apply text-[color:rgb(var(--text))] bg-[rgb(var(--bg))]; }

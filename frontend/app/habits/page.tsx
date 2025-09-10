@@ -77,17 +77,7 @@ export default function HabitsPage(){
                 <li key={h.id} className="bg-white rounded-2xl border p-5">
                   <div className="flex items-start gap-2 mb-4">
                     <a className="font-semibold text-lg hover:underline" href={`/habits/${h.id}`}>{h.title}</a>
-                    <div className="ml-auto flex items-center gap-2">
-                      <div className="flex items-center gap-1 text-orange-500">
-                        <span className="text-lg">🔥</span>
-                        <span className="font-bold text-lg">{h.current_streak}</span>
-                      </div>
-                      {h.current_streak >= 7 && (
-                        <div className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full font-medium">
-                          {h.current_streak >= 30 ? '🔥' : h.current_streak >= 14 ? '💪' : '🎯'} Week
-                        </div>
-                      )}
-                    </div>
+                    <div className="ml-auto flex items-center gap-1 text-[var(--cta-active)]"><span>⚡</span><span className="font-semibold">{h.current_streak}</span></div>
                   </div>
                   <WeekPreview habitId={h.id} selectedWeekStart={selectedWeekStart} />
                 </li>
@@ -110,17 +100,7 @@ export default function HabitsPage(){
                   <button aria-label="Unsubscribe" onClick={()=>unsubscribe(h.id)} className="absolute top-3 right-3 h-6 w-6 rounded-full border text-neutral-500 hover:text-neutral-900">×</button>
                   <div className="flex items-start gap-2 mb-4">
                     <a className="font-semibold text-lg hover:underline" href={`/habits/${h.id}`}>{h.title}</a>
-                    <div className="ml-auto flex items-center gap-2">
-                      <div className="flex items-center gap-1 text-orange-500">
-                        <span className="text-lg">🔥</span>
-                        <span className="font-bold text-lg">{h.current_streak}</span>
-                      </div>
-                      {h.current_streak >= 7 && (
-                        <div className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full font-medium">
-                          {h.current_streak >= 30 ? '🔥' : h.current_streak >= 14 ? '💪' : '🎯'} Week
-                        </div>
-                      )}
-                    </div>
+                    <div className="ml-auto flex items-center gap-1 text-[var(--cta-active)]"><span>⚡</span><span className="font-semibold">{h.current_streak}</span></div>
                   </div>
                   <WeekPreview habitId={h.id} selectedWeekStart={selectedWeekStart} />
                 </li>
